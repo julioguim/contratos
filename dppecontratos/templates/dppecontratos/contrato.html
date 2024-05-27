@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}Detalhes do Contrato: {{ contrato.num_contrato }}{% endblock %}
+
+{% block content %}
+<div class="offset-1 col-10 list-div">
+    <div class="contrato-details">
+        <div class="contrato-section">
+            <h2>Informações do Contrato</h2>
+            <ul>
+                <li><strong>Número do Contrato:</strong> {{ contrato.num_contrato }}</li>
+                <li><strong>Número da Ata:</strong> {{ contrato.num_ata }}</li>
+                <li><strong>Modalidade:</strong> {{ contrato.modalidade }}</li>
+                <li><strong>Número de Processos Licitatórios:</strong> {{ contrato.num_processos_licitatorio}}</li>
+                <li><strong>Número da Modalidade:</strong> {{ contrato.num_modalidade }}</li>
+                <li><strong>Objeto:</strong> {{ contrato.objeto }}</li>
+                <li><strong>Fornecedor:</strong> {{ contrato.fornecedor}}</li>    
+                <li><strong>CNPJ/CPF:</strong> {{ contrato.cnpj_cpf }}</li>    
+                <li><strong>Status:</strong> {{ contrato.get_done_display }}</li>    
+                <li><strong>Fiscal:</strong> {{ contrato.fiscal }}</li>    
+                <li><strong>Tipo:</strong> {{ contrato.tipo  }}</li>    
+            
+            </ul>
+        </div>
+        <div class="contrato-section">
+            <h2>Datas e Valores</h2>
+            <ul>
+                <li><strong>Início de Vigência:</strong> {{ contrato.inicio_vigencia }}</li>
+                <li><strong>Final de Vigência:</strong> {{ contrato.final_vigencia }}</li>
+                <li><strong>Data de Vencimento:</strong> {{ contrato.data_vencimento }}</li>
+                <li><strong>Data de Pagamento:</strong> {{ contrato.data_pagamento }}</li>
+                <li><strong>Valor Mensal:</strong> {{ contrato.valor_mensal }}</li>
+                <li><strong>Valor Anual:</strong> {{ contrato.valor_anual }}</li>
+                <li><strong>Criado em:</strong> {{ contrato.created_at }}</li>
+                <li><strong>Atualizado em:</strong> {{ contrato.updated_at  }}</li>
+               
+            </ul>
+        </div>
+        
+    </div>
+</div>
+{% endblock %}
